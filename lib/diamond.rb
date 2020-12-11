@@ -18,10 +18,6 @@ class Diamond
     diamond + "\n"
   end
 
-  def diamond_line(letter)
-    DiamondLine.new(letter, self).build
-  end
-
   private
 
   def diamond
@@ -30,5 +26,9 @@ class Diamond
     letters = 'A'.upto(@letter) + 'A'.upto(@preceding).reverse_each
 
     letters.map { |letter| diamond_line(letter) }.join("\n")
+  end
+
+  def diamond_line(letter)
+    DiamondLine.new(letter, self).build
   end
 end
