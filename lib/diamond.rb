@@ -23,9 +23,13 @@ class Diamond
   def diamond
     return 'A' if @letter == 'A'
 
+    diamond_lines.join("\n")
+  end
+
+  def diamond_lines
     letters = 'A'.upto(@letter) + 'A'.upto(@preceding).reverse_each
 
-    letters.map { |letter| diamond_line(letter) }.join("\n")
+    letters.map { |letter| diamond_line(letter) }
   end
 
   def diamond_line(letter)
